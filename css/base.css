@@ -1,0 +1,581 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+  --pp: #9D00FF;
+  --ligth-pp: #c062ee;
+  --white: #fff;
+  --gray: #c7c6c6;
+  --light-gray: #eee;
+  --black: #2E0548FF;
+  --dark: #13001a;
+  --slate: #8892b0;
+  --board: #414141;
+
+}
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+/* HIDING SCROLLBAR */
+body::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+body{
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    overflow-x: hidden;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100vh;
+    font-family: Poppins;
+    scroll-behavior: smooth;
+}
+
+/*######   FIRST SCREEN    ########*/
+section#thumbnail{
+    background-image: url("../assets/thumbnail1.jpg");
+    background-size: cover;
+    /*filter: hue-rotate(360deg);*/
+}
+section#thumbnail nav{
+    position: fixed;
+    display: flex;
+    top: 0;
+    justify-content: space-between;
+    align-content: center;
+    color: #fff;
+    text-transform: uppercase;
+    width: 95%;
+    padding: 0 5rem;
+    background: var(--dark);
+    z-index: 2;
+}
+section#thumbnail nav div#responsiveHeader{
+    display: none;
+}
+section#thumbnail nav div#topbar{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+}
+section#thumbnail nav div#profile,
+section#thumbnail nav div#topbar a{
+    padding: 15px;
+    text-decoration: none;
+    color: #fff;
+}
+section#thumbnail header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    color: #fff
+}
+section#thumbnail header p{
+    font-size: 24px;
+    color: #ccc
+}
+/*######   ABOUT ME    ########*/
+section#aboutme{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-image: linear-gradient(to bottom, var(--dark), var(--black));
+    position: relative;
+}
+section#aboutme::before{
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    top: -50px;
+    background-color: var(--dark);
+
+    z-index: 4
+}
+section#aboutme div#articleWrapper{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+section#aboutme div#articleWrapper article{
+    color: var(--slate);
+    font-size: 18px;
+    line-height: 1.5;
+    padding-right: 3rem;
+}
+section#aboutme div#articleWrapper h3{
+    display: none;
+}
+section#aboutme div#articleWrapper article h3{
+    display: block;
+    color: var(--pp);
+    padding: 1rem 0 1.5rem;
+    font-size:30px;
+}
+section#aboutme div#articleWrapper .imageWrapper {
+    margin-left: 1rem;
+    position: relative;
+    z-index: 1;
+    filter: hue-rotate(250deg);
+}
+section#aboutme div#articleWrapper div.imageWrapper::before {
+    content: "";
+    position: absolute;
+    margin: 8px 0 0 8px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--pp);
+    border-radius: 5px;
+    z-index: -1;
+    filter: hue-rotate(-270deg);
+}
+section#aboutme div#articleWrapper div.imageWrapper:hover::before{
+    margin: 15px 0 0 15px;
+    border: 2px solid var(--gray);
+}
+section#aboutme div#articleWrapper div.imageWrapper:hover{
+    filter: hue-rotate(0deg);
+}
+section#aboutme div#articleWrapper div.imageWrapper #myImage{
+    height: 300px;
+    width: 300px;
+}
+section#aboutme div#articleWrapper div.imageWrapper #myImage img {
+    height: 100%;
+    width: 100%;
+}
+/*######   EXPERIENCE SCREEN    ########*/
+section#experienceWrapper{
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section#experienceWrapper h3{
+    color: var(--pp);
+    padding-bottom: 1rem;
+    font-size:30px;
+    text-align: center;
+}
+section#experienceWrapper p{
+    color: var(--slate);
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 1rem 0;
+    max-width: 700px;
+    text-align: center;
+
+}
+section#experienceWrapper div.combine{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 3rem;
+}
+section#experienceWrapper div.combine div#tech h3,
+section#experienceWrapper div.combine div#company h3,
+section#project h3{
+    color: var(--board);
+    padding: 1rem 0;
+    font-size:22px;
+    text-align: center;
+    text-transform: capitalize;
+    top: 0;
+}
+section#experienceWrapper div.combine div#tech,
+section#experienceWrapper div.combine div#company{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+}
+section#experienceWrapper div.combine div#tech ul.techs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 700px;
+}
+section#experienceWrapper div.combine div#tech ul img{
+    padding: 1rem;
+    width: 4.5rem;
+    height: auto;
+    filter: grayscale(100%);
+    transition: all 0.3s ease-in-out;
+}
+section#experienceWrapper div.combine div#company ul a img{
+    padding: 2rem 1rem;
+    width: 170px;
+    height: auto;
+}
+section#experienceWrapper div.combine div#tech ul img:hover{
+    filter: grayscale(0);
+}
+/*######   RESUME SCREEN    ########*/
+section#resume{
+    background-image: url("../assets/thumbnail2.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    height: 300px;
+}
+section#resume div#resumeWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+section#resume h3{
+    color: var(--white);
+    padding: 0 0 2rem 0;
+    font-size:25px;
+    text-align: center;
+    text-transform: capitalize;
+    top: 0;
+}
+section#resume a{
+    text-decoration: none;
+    padding: 0.75rem 2rem;
+    border: 1px solid var(--white);
+    color: var(--white);
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    background: none;
+    text-transform: capitalize;
+}
+section#resume a:hover{
+    padding: 0.75rem 2.5rem;
+    background: var(--board);
+}
+
+/*######   PROJECTS SCREEN    ########*/
+
+section#project{
+    width: 100%;
+    height: 80vh;
+    padding: 2.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-gray);
+}
+section#projectWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 1rem 0 0;
+}
+section#project .myCard{
+    width: 380px;
+    height: 380px;
+    border-radius: 20px;
+    padding: 0 10px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+section#project .myCard .myCardImage{
+    width: 380px;
+    height: 230px;
+}
+section#project .myCard .myCardImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+section#project .myCard .myCardTitle{
+    font-weight: bolder;
+    font-size: 20px;
+}
+section#project .myCard .myCardTags{
+    display: flex;
+    column-gap: 5px;
+}
+section#project .myCard .myCardTags p{
+    padding: 3px 12px;
+    background-color: var(--ligth-pp);
+    border-radius: 20px;
+    font-size: 12px;
+    color: var(--white);
+}
+section#project .myCard .myCardButton{
+    width: 100%;
+    background-color: var(--pp);
+    color: var(--white);
+    padding: 7px 0;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/*######   CONTACT SCREEN    ########*/
+
+section#contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+}
+section#contact div#contactWrapper{
+    margin-top: -2rem   ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+section#contact div#contactWrapper div#avatar{
+    width: 220px;
+    height: auto;
+}
+section#contact div#contactWrapper div#avatar img{
+    height: 100%;
+    width: 100%;
+}
+section#contact div#contactWrapper div#contactInfo div#connections{
+    display: flex;
+
+}
+section#contact div#contactWrapper div#contactInfo h3{
+    font-size: 28px;
+}
+section#contact div#contactWrapper div#contactInfo p{
+    padding: 10px 0 20px;
+}
+
+section#contact div#connections a,
+section#contact div#connections a i{
+    text-decoration: none;
+    font-size: 30px;
+    padding: 0 5px;
+    color: var(--black);
+}
+section#contact div#contactWrapper div#contactInfo div#connections a:nth-child(1){
+    font-size: 16px;
+    padding: 3px 8px;
+    border: 2px solid var(--pp);
+    border-radius: 30px;
+    text-decoration: none;
+    color: var(--black);
+    align-self: center;
+}
+section#contact div#contactWrapper div#contactInfo div#connections a:nth-child(1):hover{
+    color: var(--white);
+    background-color: var(--black);
+}
+
+/*######   FIXED FOOTER    ########*/
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-family: Poppins;
+}
+footer div#footerWrapper{
+    clear: both;
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: var(--black);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer div#footerWrapper i.fa-beat{
+    color: #f32222;
+    padding: 0 5px;
+}
+
+/*#############################################*/
+/*##########  ADDING RESPONSIVENESS ###########*/
+/*#############################################*/
+@media screen and (max-width: 768px) {
+    section{
+        /*display: flex;*/
+        flex-direction: column;
+        /*justify-content: center;*/
+        /*align-content: center;*/
+        /*width: 100%;*/
+        /*height: 100vh;*/
+        /*font-family: Poppins;*/
+        /*scroll-behavior: smooth;*/
+    }
+
+    /*######   FIRST SCREEN    ########*/
+    section#thumbnail nav{
+        flex-direction: column;
+        width: 100%;
+        padding: 0 1rem;
+    }
+    section#thumbnail nav div#responsiveHeader{
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--dark);
+        width: 90%;
+    }
+    section#thumbnail nav div#topbar{
+        display: none;
+        flex-direction: column;
+    }
+    section#thumbnail nav div#profile{
+        display: none;
+    }
+    section#thumbnail nav div#responsiveHeader div#profile2{
+        padding: 15px;
+    }
+    section#thumbnail nav div#responsiveHeader a#menu{
+        text-decoration: none;
+        color: #fff;
+        padding-top: 10px;
+        font-size: 18px;
+    }
+
+    /*######   ABOUT ME    ########*/
+
+    section#aboutme div#articleWrapper{
+        width: 80%;
+        /*margin: auto;*/
+        /*display: flex;*/
+        flex-direction: column-reverse;
+        row-gap: 1rem;
+        /*justify-content: center;*/
+        /*align-items: center;*/
+    }
+    section#aboutme div#articleWrapper article h3{
+        display: none;
+    }
+    section#aboutme div#articleWrapper h3{
+        display: block;
+        color: var(--pp);
+        padding: 2rem 0;
+        font-size:30px;
+        /*justify-self: center;*/
+    }
+    section#aboutme div#articleWrapper article{
+        color: var(--slate);
+       font-size:calc(10px + 1.1vw);
+        line-height: 1.5;
+        padding: 2rem 0;
+    }
+    section#aboutme div#articleWrapper div.imageWrapper {
+    /*    max-width: 100%;*/
+    /*    height: auto;*/
+    /*    object-fit: cover;*/
+        margin: 0;
+    /*    position: relative;*/
+    /*    z-index: 1;*/
+    }
+    section#aboutme div#articleWrapper div.imageWrapper #myImage{
+        height: 250px;
+        width: 250px;
+    }
+
+    /*######   EXPERIENCE SCREEN    ########*/
+    section#experienceWrapper{
+        margin: 0 auto;
+    }
+    section#experienceWrapper div.combine{
+        display: flex;
+        flex-direction: column;
+        row-gap: 3rem;
+    }
+    section#experienceWrapper div.combine div#tech,
+    section#experienceWrapper div.combine div#company{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: start;
+        align-items: center;
+    }
+    section#experienceWrapper div.combine div#tech ul.techs{
+        /*display: flex;*/
+        /*flex-wrap: wrap;*/
+        /*justify-content: center;*/
+        /*align-items: center;*/
+        max-width: 90%;
+    }
+    section#experienceWrapper div.combine div#tech ul img{
+        padding: .6rem;
+        width: 3rem;
+        /*height: auto;*/
+        /*filter: grayscale(100%);*/
+        /*transition: all 0.3s ease-in-out;*/
+    }
+    section#experienceWrapper div.combine div#company ul a img{
+        padding: 1rem;
+        width: 100px;
+        /*height: auto;*/
+    }
+
+    /*######   PROJECTS SCREEN    ########*/
+
+    section#project{
+        /*width: 100%;*/
+        height: auto;
+        padding: 2.5rem 0 1rem;
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*justify-content: center;*/
+        /*align-items: center;*/
+        /*background-color: var(--light-gray);*/
+    }
+    section#projectWrapper{
+        /*display: flex;*/
+        /*justify-content: center;*/
+        /*align-items: center;*/
+        /*gap: 2rem;*/
+        /*margin: 2rem 0 0;*/
+        height: auto;
+    }
+
+
+    /*######   CONTACT SCREEN    ########*/
+    section#contact{
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*justify-content: center;*/
+        /*align-items: center;*/
+        height: 90vh;
+    }
+    section#contact div#contactWrapper{
+    /*    margin-top: -2rem   ;*/
+    /*    display: flex;*/
+    /*    justify-content: center;*/
+    /*    align-items: center;*/
+    /*    width: 50%;*/
+        flex-direction: column;
+    }
+    section#contact div#contactWrapper div#contactInfo div#connections{
+        display: flex;
+        justify-content: center;
+    }
+    section#contact div#contactWrapper div#contactInfo h3{
+        font-size: 22px;
+        text-align: center;
+    }
+    section#contact div#contactWrapper div#contactInfo p{
+    /*    padding: 10px 0 20px;*/
+        text-align: center;
+    }
+
+}
